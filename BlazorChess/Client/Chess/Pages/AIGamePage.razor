@@ -1,0 +1,24 @@
+﻿@using BlazorChess.Client.Chess.Components;
+
+@page "/Chess/AI/{PlayerSideStr}"
+@inherits ChessGame
+
+<h3>Chess</h3>
+
+<ChessContextWrapper Context="Context">
+
+	<ChessBot @ref="@OpponentInput" InputForSide="@OpponentSide"/>
+	<MouseInput @ref="@PlayerInput" InputForSide="@PlayerSide">
+		<ChessRenderer @ref="Renderer" Spritesheet="Spritesheet"/>
+	</MouseInput>
+	<ChessSpritesheet @ref="Spritesheet"/>
+
+	<hr/>
+	<button class="btn btn-primary" @onclick="RestartGame"> Restart </button> 
+	<GameStatus @ref="GameStatus"/>
+
+</ChessContextWrapper>
+
+
+
+

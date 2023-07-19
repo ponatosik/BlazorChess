@@ -1,0 +1,5 @@
+﻿@media (max-width: 641px) {
+    div {
+        transform: scale(0.5) translate(-50%, -40%);
+    }
+}

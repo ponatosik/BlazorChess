@@ -1,0 +1,13 @@
+﻿@using BlazorChess.Client.Chess.Components;
+@using BlazorChess.Shared.Models;
+@using BlazorChess.Client.Chess.Online.Components;
+
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@page "/Chess/Online/Create"
+
+<h3>Create online game</h3>
+
+<GameSettings Settings="settings"/>
+<hr />
+<button class="btn btn-primary" @onclick="CreateGame">Create game</button>

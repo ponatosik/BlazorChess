@@ -1,0 +1,18 @@
+﻿@using BlazorChess.Shared.Models;
+
+<h4>GameSettings</h4>
+
+<EditForm Model="Settings">
+	Prefered side: 
+	<InputRadioGroup @bind-Value="@Settings.Side">
+		<p><InputRadio Value = "PreferedChessSide.Random" id="radio-side-random" /> <label for="radio-side-random">Random</label></p>
+		<p><InputRadio Value = "PreferedChessSide.White" id="radio-side-white" /> <label for="radio-side-white">White</label></p>
+		<p><InputRadio Value = "PreferedChessSide.Black" id="radio-side-black" /> <label for="radio-side-black">Black</label></p>
+	</InputRadioGroup>
+</EditForm>
+
+
+@code {
+	[Parameter, EditorRequired, AllowNull]
+	public OnlineGameSettings Settings { get; set; }
+}

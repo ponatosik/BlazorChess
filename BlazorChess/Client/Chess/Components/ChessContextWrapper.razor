@@ -1,0 +1,13 @@
+﻿
+<ErrorBoundary>
+	<CascadingValue Value="Context" IsFixed="false">
+		@ChildContent
+	</CascadingValue>
+</ErrorBoundary>
+
+@code {
+	[Parameter, EditorRequired, AllowNull]
+	public ChessContext Context { get; set; }
+	[Parameter, AllowNull]
+	public RenderFragment ChildContent { get; set; }
+}

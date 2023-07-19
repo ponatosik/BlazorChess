@@ -1,0 +1,27 @@
+﻿@using BlazorChess.Client.Chess.Components;
+@using BlazorChess.Client.Chess.Online.Components;
+
+@page "/Chess/Online/{PlayerSideStr}/{GameId:guid}"
+@*@page "/Chess/Online/{GameId:guid}"*@
+
+@inherits ChessGame
+
+<h3>
+	Online game: @Context.PlayerSide  
+	<button class="btn btn-primary float-end" @onclick="CopyInvitationLink">Copy invitation link</button>
+</h3>
+
+<ChessContextWrapper Context="Context">
+
+	<SignalReciever @ref="@OpponentInput" InputForSide="@OpponentSide" OnlineGame="@OnlineGame"/>
+	<MouseInput @ref="@PlayerInput" InputForSide="@PlayerSide">
+		<ChessRenderer @ref="Renderer" Spritesheet="Spritesheet"/>
+	</MouseInput>
+	<ChessSpritesheet @ref="Spritesheet"/>
+
+	<hr/>
+	<GameStatus @ref="GameStatus"/>
+
+</ChessContextWrapper>
+
+
