@@ -36,6 +36,9 @@ public abstract class ChessGame : ComponentBase
 	public ChessRenderer Renderer { get; set; }
 	[AllowNull]
 	public GameStatus GameStatus { get; set; }
+	[AllowNull]
+	public ElementReference GameFrame { get; set; }
+
 
 	[Inject, AllowNull]
 	protected IChess ChessEngine { get; set; }

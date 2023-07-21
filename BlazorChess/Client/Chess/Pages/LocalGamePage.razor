@@ -7,15 +7,18 @@
 
 <ChessContextWrapper Context="Context">
 
-	<MouseInput @ref="@OpponentInput" InputForSide="@OpponentSide">
-	<MouseInput @ref="@PlayerInput" InputForSide="@PlayerSide">
-		<ChessRenderer @ref="Renderer" Spritesheet="Spritesheet"/>
-	</MouseInput>
-	</MouseInput>
-	<ChessSpritesheet @ref="Spritesheet"/>
+	<div @ref="@GameFrame" class="bg-light">
+		<MouseInput @ref="@OpponentInput" InputForSide="@OpponentSide">
+		<MouseInput @ref="@PlayerInput" InputForSide="@PlayerSide">
+			<ChessRenderer @ref="Renderer" Spritesheet="Spritesheet"/>
+		</MouseInput>
+		</MouseInput>
+		<ChessSpritesheet @ref="Spritesheet"/>
+	</div>
 
 	<hr/>
 	<button class="btn btn-primary" @onclick="RestartGame"> Restart </button> 
+	<FullScreenButton TargetElement="GameFrame"></FullScreenButton>
 	<GameStatus @ref="GameStatus"/>
 
 </ChessContextWrapper>

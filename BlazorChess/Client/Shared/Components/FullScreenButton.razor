@@ -1,0 +1,15 @@
+﻿@using BlazorChess.Client.Services
+
+@inject FullscreenService FullScreenService
+
+<button class="btn btn-primary" @onclick="OpenFullScreen"> Full screen </button> 
+
+@code {
+	[Parameter, EditorRequired]
+	public ElementReference TargetElement { get; set; }
+
+	public async Task OpenFullScreen()
+	{
+		await FullScreenService.OpenFullscreen(TargetElement);
+	}
+}

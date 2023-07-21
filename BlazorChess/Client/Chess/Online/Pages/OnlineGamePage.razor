@@ -13,14 +13,17 @@
 
 <ChessContextWrapper Context="Context">
 
-	<SignalReciever @ref="@OpponentInput" InputForSide="@OpponentSide" OnlineGame="@OnlineGame"/>
-	<MouseInput @ref="@PlayerInput" InputForSide="@PlayerSide">
-		<ChessRenderer @ref="Renderer" Spritesheet="Spritesheet"/>
-	</MouseInput>
-	<ChessSpritesheet @ref="Spritesheet"/>
+	<div @ref="@GameFrame" class="bg-light">
+		<SignalReciever @ref="@OpponentInput" InputForSide="@OpponentSide" OnlineGame="@OnlineGame"/>
+		<MouseInput @ref="@PlayerInput" InputForSide="@PlayerSide">
+			<ChessRenderer @ref="Renderer" Spritesheet="Spritesheet"/>
+		</MouseInput>
+		<ChessSpritesheet @ref="Spritesheet"/>
+	</div>
 
 	<hr/>
 	<GameStatus @ref="GameStatus"/>
+	<FullScreenButton TargetElement="GameFrame"></FullScreenButton>
 
 </ChessContextWrapper>
 

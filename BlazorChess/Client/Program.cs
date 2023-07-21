@@ -16,6 +16,8 @@ builder.Services.AddSingleton<IChess, Chess>();
 builder.Services.AddScoped<OnlineGameService>();
 builder.Services.AddTransient<ClipboardService>();
 builder.Services.AddTransient<AlertService>();
+builder.Services.AddTransient<FullscreenService>();
+
 
 
 await builder.Build().RunAsync();
