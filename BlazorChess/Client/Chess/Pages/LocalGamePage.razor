@@ -3,9 +3,14 @@
 @page "/Chess/Local/{PlayerSideStr?}"
 @inherits ChessGame
 
-<h3>Chess</h3>
+<PageTitle>Local game</PageTitle>
+<h3>Local game</h3>
 
-<ChessContextWrapper Context="Context">
+<HeadContent>
+	<meta property="og:title" content="Chess match on local device">
+</HeadContent>
+
+<ChessContextWrapper Context="@Context">
 
 	<div @ref="@GameFrame" class="bg-light">
 		<MouseInput @ref="@OpponentInput" InputForSide="@OpponentSide">

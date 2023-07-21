@@ -6,12 +6,19 @@
 
 @inherits ChessGame
 
+<PageTitle> Online game: @Context.PlayerSide </PageTitle>
+
+<HeadContent>
+	<meta property="og:title" content="Join online chess match">
+	<meta property="og:description" content="You have been invated to play chess.">
+</HeadContent>
+
 <h3>
-	Online game: @Context.PlayerSide  
+	Online game: @Context.PlayerSide
 	<button class="btn btn-primary float-end" @onclick="CopyInvitationLink">Copy invitation link</button>
 </h3>
 
-<ChessContextWrapper Context="Context">
+<ChessContextWrapper Context="@Context">
 
 	<div @ref="@GameFrame" class="bg-light">
 		<SignalReciever @ref="@OpponentInput" InputForSide="@OpponentSide" OnlineGame="@OnlineGame"/>

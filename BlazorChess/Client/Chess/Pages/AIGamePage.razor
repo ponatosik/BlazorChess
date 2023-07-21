@@ -3,9 +3,14 @@
 @page "/Chess/AI/{PlayerSideStr}"
 @inherits ChessGame
 
-<h3>Chess</h3>
+<PageTitle>Chess with CPU</PageTitle>
+<h3>Chess with CPU</h3>
 
-<ChessContextWrapper Context="Context">
+<HeadContent>
+	<meta property="og:title" content="Chess match against computer">
+</HeadContent>
+
+<ChessContextWrapper Context="@Context">
 
 	<div @ref="@GameFrame" class="bg-light">
 		<ChessBot @ref="@OpponentInput" InputForSide="@OpponentSide"/>
